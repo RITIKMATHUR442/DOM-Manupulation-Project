@@ -384,16 +384,6 @@ footer {
     border-radius: 8px;
     animation: fadeInUp 1s ease-in-out;
 }
-/* 
-
-footer{
-    text-align: center;
-    margin-top: 30px;
-    padding: 20px;
-    background-color: rgb(204, 205, 205);
-    border-radius: 15px;
-    box-shadow: 0 20px 30px rgba(184, 182, 182, 0.3);
-} */
 
 .social-links{
     display: flex;
