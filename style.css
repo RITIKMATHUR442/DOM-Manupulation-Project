@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: #74ebd5;
+    animation: slideLine 2s ease-out infinite;
+}
+
+header p {
+    font-size: 1.5rem;
+    color: #f4f4f4;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+@keyframes slideLine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+#registrationForm {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    animation: bounceIn 1.5s ease-in-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 15px 0 5px;
+    color: #333;
+    font-weight: 600;
+}
+
+form input {
+    padding: 12px;
+    border: 2px solid #74ebd5;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+form input:focus {
+    border-color: #9face6;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"] {
+    background-color: #74ebd5;
+    color: #fff;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button[type="submit"]:hover {
+    background-color: #9face6;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+button[type="submit"]:hover::before {
+    left: 100%;
+}
+
+#studentListSection {
+    width: 100%;
+    max-width: 670px;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1.2s ease;
+    max-height: 400px;  
+    overflow-y: scroll;  
+    overflow-x: hidden; 
+}
+
+#studentListSection::-webkit-scrollbar {
+    width: 10px; 
+}
+
+#studentListSection::-webkit-scrollbar-thumb {
+    background-color: #74ebd5; 
+    border-radius: 10px;
+}
+
+#studentListSection::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); 
+}
+
+#studentListSection {
+    scrollbar-color: #74ebd5 rgba(0, 0, 0, 0.1);
+    scrollbar-width: thin; 
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#studentListSection h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+th, td {
+    padding: 10px; 
+    text-align: left; 
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    word-break: break-word; 
+    overflow-wrap: break-word; 
+}
+
+th {
+    background-color: #74ebd5;
+    color: #fff;
+    text-align: center;
+}
+
+td:last-child {
+    text-align: center; 
+}
+
+tr:hover {
+    background-color: rgba(116, 235, 213, 0.2);
+    cursor: pointer;
+}
+
+button.edit, button.delete {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #fff;
+    margin: 0 5px;
+    white-space: nowrap; 
+}
+
+button.edit {
+    background-color: #9face6;
+}
+
+button.delete {
+    background-color: #ff6b6b;
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2.5rem; 
+    }
+
+    header p {
+        font-size: 1.2rem; 
+    }
+
+    .container {
+        gap: 15px;
+    }
+
+    #registrationForm {
+        padding: 20px; 
+    }
+
+    form input {
+        padding: 10px; 
+        font-size: 0.9rem; 
+    }
+
+    button[type="submit"] {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    #studentListSection h2 {
+        font-size: 2rem;
+    }
+
+    table, th, td {
+        font-size: 0.8rem; 
+        padding: 6px;
+    }
+
+    button.edit, button.delete {
+        font-size: 0.7rem; 
+        padding: 5px 8px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header p {
+        font-size: 1.4rem;
+    }
+
+    .container {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    #registrationForm {
+        max-width: 100%;
+    }
+
+    #studentListSection {
+        max-width: 100%;
+    }
+
+    table, th, td {
+        font-size: 1rem;
+    }
+
+    button.edit, button.delete {
+        font-size: 0.85rem;
+        padding: 7px 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        padding: 30px;
+    }
+
+    header h1 {
+        font-size: 4rem;
+    }
+
+    header p {
+        font-size: 1.7rem;
+    }
+
+    .container {
+        gap: 25px;
+    }
+
+    #registrationForm {
+        padding: 40px;
+    }
+
+    #studentListSection {
+        max-width: 700px;
+    }
+
+    button[type="submit"] {
+        padding: 15px;
+        font-size: 1.3rem;
+    }
+
+    #studentListSection h2 {
+        font-size: 3rem;
+    }
+
+    table, th, td {
+        font-size: 1.2rem;
+    }
+
+    button.edit, button.delete {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 8px;
+    animation: fadeInUp 1s ease-in-out;
+}
+/* 
+
+footer{
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgb(204, 205, 205);
+    border-radius: 15px;
+    box-shadow: 0 20px 30px rgba(184, 182, 182, 0.3);
+} */
+
+.social-links{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.social-links{
+    display: inline-block;
+    transition: transform 0.3;
+}
+
+.social-links:hover{
+    transform: scale(1.1);
+}
+
+.social-icon{
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover{
+    transform: rotate(360deg);
+}
+
+@media (max-width: 768){
+    .social-icon{
+        width: 30px;
+    }
+}
+
+@media (max-width: 480){
+    footer{
+        padding: 15px;
+    }
+
+    .social-links{
+        flex-direction: column;
+    }
+    .social-links{
+        margin: 5px 0;
+    }
+
+
+}
